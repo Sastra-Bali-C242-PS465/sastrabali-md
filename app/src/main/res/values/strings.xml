@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">SABI</string>
+
+
+    <string name="title_register">Buat Akun</string>
+    <string name="title_login">Masuk Akun</string>
+    <string name="title_email">Email</string>
+    <string name="title_username">Username</string>
+    <string name="title_password">Password</string>
+    <string name="title_confirm_password">Konfirmasi Password</string>
+
+    <string name="hint_email">Masukan alamat email anda</string>
+    <string name="hint_username">Masukan username anda</string>
+    <string name="hint_password">Masukan password anda</string>
+    <string name="hint_confirm_password">Konfirmasi password anda</string>
+    <string name="dont_have_account">Belum memiliki akun?</string>
+    <string name="already_have_account">Sudah memiliki akun?</string>
+
+    <string name="title_home">Home</string>
+    <string name="title_dictionary">Kamus</string>
+    <string name="title_scanner">Scanner</string>
+    <string name="title_quiz">Quiz</string>
+    <string name="title_profile">Profil</string>
+
+
+
+
+
+
 </resources>
