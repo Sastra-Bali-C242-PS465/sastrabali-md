@@ -1,60 +1,91 @@
 package com.example.sabi.ui.fragment.dictionary
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.sabi.R
+import com.example.sabi.data.repository.DictionaryRepository
+import com.example.sabi.data.retrofit.ApiConfig
+import com.example.sabi.data.store.SessionPreferences
+import com.example.sabi.ui.adapter.DictionaryAdapter
+import com.example.sabi.ui.activity.dictionary.DetailDictionaryActivity
+import com.example.sabi.ui.viewmodel.DictionaryViewModel
+import com.example.sabi.utils.DictionaryViewModelFactory
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DictionaryFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class DictionaryFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var noDataTextView: View
+    private val dictionaryViewModel: DictionaryViewModel by viewModels {
+        DictionaryViewModelFactory(DictionaryRepository(ApiConfig.getApiService()))
     }
+
+    private lateinit var dictionaryAdapter: DictionaryAdapter
+    private lateinit var sessionPreferences: SessionPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dictionary, container, false)
+        val view = inflater.inflate(R.layout.fragment_dictionary, container, false)
+
+        sessionPreferences = SessionPreferences(requireContext())
+
+        recyclerView = view.findViewById(R.id.rv_dictionary)
+        noDataTextView = view.findViewById(R.id.tv_no_data)
+
+        recyclerView.layoutManager = GridLayoutManager(context, 2)
+        dictionaryAdapter = DictionaryAdapter(emptyList()) { dictionary ->
+            val intent = Intent(requireContext(), DetailDictionaryActivity::class.java)
+            intent.putExtra("DICTIONARY_ID", dictionary.id)
+            startActivity(intent)
+        }
+        recyclerView.adapter = dictionaryAdapter
+
+        fetchDictionaries()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DictionaryFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DictionaryFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun fetchDictionaries() {
+        lifecycleScope.launch {
+            sessionPreferences.token.collect { token ->
+                if (!token.isNullOrEmpty()) {
+                    observeDictionaries(token)
+                } else {
+                    noDataTextView.visibility = View.VISIBLE
+                    recyclerView.visibility = View.GONE
                 }
             }
+        }
+    }
+
+    private fun observeDictionaries(token: String) {
+        dictionaryViewModel.getDictionaries(token).observe(viewLifecycleOwner) { response ->
+            val data = response.data.readings
+            if (data.isNullOrEmpty()) {
+                noDataTextView.visibility = View.VISIBLE
+                recyclerView.visibility = View.GONE
+            } else {
+                noDataTextView.visibility = View.GONE
+                recyclerView.visibility = View.VISIBLE
+                dictionaryAdapter = DictionaryAdapter(data) { dictionary ->
+                    Log.d("DictionaryFragment", "Clicked Dictionary ID: ${dictionary.id}")
+                    val intent = Intent(requireContext(), DetailDictionaryActivity::class.java)
+                    intent.putExtra("DICTIONARY_ID", dictionary.id)  // Pass the dictionary ID to the detail activity
+                    startActivity(intent)
+                }
+                recyclerView.adapter = dictionaryAdapter
+            }
+        }
     }
 }

@@ -1,19 +1,18 @@
 <resources>
     <string name="app_name">SABI</string>
 
-
     <string name="title_register">Buat Akun</string>
     <string name="title_login">Masuk Akun</string>
     <string name="title_email">Email</string>
-    <string name="title_username">Username</string>
+    <string name="title_fullname">Nama Lengkap</string>
     <string name="title_password">Password</string>
     <string name="title_confirm_password">Konfirmasi Password</string>
 
     <string name="hint_email">Masukan alamat email anda</string>
-    <string name="hint_username">Masukan username anda</string>
+    <string name="hint_fullname">Masukan nama lengkap anda</string>
     <string name="hint_password">Masukan password anda</string>
     <string name="hint_confirm_password">Konfirmasi password anda</string>
-    <string name="dont_have_account">Belum memiliki akun?</string>
+    <string name="dont_have_account">Mulai Sekarang</string>
     <string name="already_have_account">Sudah memiliki akun?</string>
 
     <string name="title_home">Home</string>
@@ -22,8 +21,64 @@
     <string name="title_quiz">Quiz</string>
     <string name="title_profile">Profil</string>
 
+    <string name="header_placeholder">Halo Semeton!</string>
+    <string name="logo_description">SABI Logo</string>
 
+    <string name="title_dictionary_card">Judul Kamus</string>
+    <string name="dictionary_description">Gambar Kamus</string>
 
+    <string name="title_quiz_card">Judul Quiz</string>
+    <string name="quiz_description">Gambar Quiz</string>
+    <string name="quiz_number">1</string>
+    <string name="quiz_total">5 Soal</string>
+
+    <string name="title_welcome">Selamat Datang di SABI!</string>
+    <string name="welcome_description">Belajar Bahasa Bali jadi lebih mudah dan menyenangkan. Temukan beragam hal menarik untuk mendalami budaya dan bahasa Bali.</string>
+
+    <string name="empty_image_warning">Silakan masukkan berkas gambar terlebih dahulu.</string>
+    <string name="result">Hasil Analisis</string>
+    <string name="image_classifier_failed">Image classifier failed to initialize. See error logs for details</string>
+    <string name="tflitevision_is_not_initialized_yet">TfLiteVision is not initialized yet</string>
+
+    <string name="title_camera">Aksara Scanner</string>
+    <string name="camera_description">Pastikan aksara ditempatkan sesuai dengan kotak panduan!</string>
+
+    <string name="version">v. 1.0</string>
+    <string name="result_text">%1$s dengan confidence score sebesar %2$d%%</string>
+
+    <string name="start_quiz">Mulai</string>
+    <string name="close_description">Tutup dialog</string>
+    <string name="start_quiz_description">Klik tombol di bawah ini untuk memulai quiz</string>
+    <string name="title_quiz_question">Soal No. %1$d</string>
+    <string name="option_1">Pilihan 1</string>
+    <string name="option_2">Pilihan 2</string>
+    <string name="option_3">Pilihan 3</string>
+    <string name="option_4">Pilihan 4</string>
+    <string name="previous_button">Kembali</string>
+    <string name="next_button">Selanjutnya</string>
+    <string name="finish_button">Selesai</string>
+
+    <string name="close_quiz_title">Ingin meninggalkan sesi quiz?</string>
+    <string name="close_quiz_confirm_description">Klik tombol di bawah ini untuk melanjutkan</string>
+    <string name="close_quiz_confirm_action">Keluar</string>
+
+    <string name="dictionary_home_title">Jelajahi kosakata baru!</string>
+    <string name="quiz_home_title">Siap menjawab tantangan?</string>
+
+    <string name="no_data_available">Tidak terdapat data dalam halaman</string>
+
+    <string name="result_quiz_title">Kamu berhasil menyelesaikan quiz!</string>
+    <string name="result_quiz_description">Ini detail dari quiz yang telah kamu kerjakan</string>
+    <string name="table_no">No</string>
+    <string name="table_answer">Jawaban</string>
+    <string name="result_quiz_score">Nilai yang kamu peroleh adalah</string>
+    <string name="result_quiz_total_score">100</string>
+
+    <string name="prediction_title">Hasil prediksi dari aksara pada foto kamu adalah:</string>
+
+    <string name="title_logout">Keluar Akun</string>
+    <string name="logout_dialog_title">Ingin meninggalkan aplikasi?</string>
+    <string name="password_too_short">Password kurang dari delapan karakter!</string>
 
 
 

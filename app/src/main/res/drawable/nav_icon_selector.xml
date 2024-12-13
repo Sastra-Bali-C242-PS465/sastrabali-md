@@ -3,5 +3,5 @@
     <!-- Warna ikon saat item aktif -->
     <item android:state_checked="true" android:color="@color/darkgreen" />
     <!-- Warna ikon default -->
-    <item android:color="@color/grey" />
+    <item android:color="@color/gray" />
 </selector>

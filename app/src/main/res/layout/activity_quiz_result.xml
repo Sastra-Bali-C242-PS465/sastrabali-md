@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.quiz.QuizResultActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="64dp"> <!-- Ruang untuk tombol di bawah -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/iv_result_quiz"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:contentDescription="@string/close_quiz_title"
+                android:src="@drawable/ic_congrats"/>
+
+            <TextView
+                android:id="@+id/tv_result_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="26sp"
+                android:textColor="@color/darkgreen"
+                android:fontFamily="@font/bold"
+                android:text="@string/result_quiz_title" />
+
+            <TextView
+                android:id="@+id/tv_result_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_gravity="center"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/medium"
+                android:text="@string/result_quiz_description" />
+
+            <TableLayout
+                android:id="@+id/table_results"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:stretchColumns="2">
+                <!-- Header tabel -->
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/table_no"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:fontFamily="@font/bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/table_answer"
+                        android:textSize="18sp"
+                        android:gravity="center"
+                        android:padding="8dp"
+                        android:fontFamily="@font/bold" />
+                </TableRow>
+            </TableLayout>
+
+            <TextView
+                android:id="@+id/tv_result_score_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/medium"
+                android:text="@string/result_quiz_score" />
+
+            <!-- Total Nilai -->
+            <TextView
+                android:id="@+id/tv_total_score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="50sp"
+                android:fontFamily="@font/bold"
+                android:text="@string/result_quiz_total_score" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Tombol Kembali -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/previous_button"
+        android:fontFamily="@font/bold"
+        android:textSize="14sp"
+        android:paddingVertical="12dp"
+        android:layout_marginBottom="40dp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

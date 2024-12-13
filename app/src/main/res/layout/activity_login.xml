@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingHorizontal="40dp"
-    tools:context=".ui.activity.RegisterActivity">
+    tools:context=".ui.activity.LoginActivity">
 
     <!-- Title -->
     <TextView
@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_login"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="48dp"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_email"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
@@ -45,9 +45,8 @@
         android:hint="@string/hint_email"
         android:fontFamily="@font/regular"
         android:inputType="text"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:minHeight="48dp"
-        android:selectAllOnFocus="true"
         app:layout_constraintTop_toBottomOf="@id/tv_title_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -58,7 +57,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_password"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
@@ -66,7 +65,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Password Input -->
-    <EditText
+    <com.example.sabi.ui.customview.CustomEditText
         android:id="@+id/ed_login_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -75,22 +74,23 @@
         android:hint="@string/hint_password"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@id/tv_title_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Register Button -->
-    <Button
-        android:id="@+id/btnRegister"
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnLogin"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/title_login"
         android:fontFamily="@font/bold"
         android:textSize="14sp"
-        android:paddingVertical="10dp"
+        android:paddingVertical="12dp"
         android:layout_marginTop="20dp"
+        app:cornerRadius="10dp"
         app:layout_constraintTop_toBottomOf="@id/ed_login_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

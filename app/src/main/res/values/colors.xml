@@ -5,6 +5,8 @@
     <color name="darkgreen">#09423e</color>
     <color name="lightgreen">#65a18e</color>
     <color name="softorange">#f67c63</color>
-    <color name="grey">#484C52</color>
-    484C52
+    <color name="gray">#484C52</color>
+    <color name="light_gray">#E0E0E0</color>
+    <color name="medium_gray">#F2F2F2</color>
+    <color name="bounding_box_color">#f67c63</color>
 </resources>

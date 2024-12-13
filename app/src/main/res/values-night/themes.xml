@@ -1,7 +1,63 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.SABI" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.SABI" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/darkgreen</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorPrimarySurface">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurfaceVariant">@color/white</item>
+        <item name="colorOnSurfaceVariant">@color/white</item>
+        <item name="colorOnPrimaryContainer">@color/white</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="colorOnSecondaryContainer">@color/white</item>
+
+
+
+
+
+        <item name="android:windowBackground">@color/white</item>
+
     </style>
+
+    <style name="Theme.SABI" parent="Base.Theme.SABI" />
+
+    <style name="fab_3_rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="BottomNavItemTextStyleActive" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="BottomNavItemTextStyleInactive" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="RoundedCornerImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+        <item name="strokeColor">@color/medium_gray</item> <!-- Warna border -->
+        <item name="strokeWidth">2dp</item> <!-- Ketebalan border -->
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/nav_default_pop_enter_anim</item>
+        <item name="android:windowExitAnimation">@anim/nav_default_pop_exit_anim</item>
+    </style>
+
+    <style name="CustomImageShape" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+
+    <style name="CircleImageShape" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>

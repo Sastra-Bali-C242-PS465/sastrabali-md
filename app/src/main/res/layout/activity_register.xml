@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_register"
-        android:textSize="30sp"
+        android:textSize="24sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="48dp"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_email"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
@@ -45,20 +45,19 @@
         android:hint="@string/hint_email"
         android:fontFamily="@font/regular"
         android:inputType="text"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:minHeight="48dp"
-        android:selectAllOnFocus="true"
         app:layout_constraintTop_toBottomOf="@id/tv_title_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Username Label -->
     <TextView
-        android:id="@+id/tv_title_username"
+        android:id="@+id/tv_title_fullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/title_username"
-        android:textSize="18sp"
+        android:text="@string/title_fullname"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
@@ -67,17 +66,17 @@
 
     <!-- Username Input -->
     <EditText
-        android:id="@+id/ed_register_username"
+        android:id="@+id/ed_register_fullname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_person"
         android:drawablePadding="6dp"
-        android:hint="@string/hint_username"
+        android:hint="@string/hint_fullname"
         android:fontFamily="@font/regular"
-        android:inputType="textEmailAddress"
-        android:textSize="14sp"
+        android:inputType="text"
+        android:textSize="12sp"
         android:minHeight="48dp"
-        app:layout_constraintTop_toBottomOf="@id/tv_title_username"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_fullname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -87,15 +86,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_password"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/ed_register_username"
+        app:layout_constraintTop_toBottomOf="@id/ed_register_fullname"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!-- Password Input -->
-    <EditText
+    <com.example.sabi.ui.customview.CustomEditText
         android:id="@+id/ed_register_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -104,7 +103,7 @@
         android:hint="@string/hint_password"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@id/tv_title_password"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/title_confirm_password"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="?attr/colorPrimary"
         android:fontFamily="@font/bold"
         android:layout_marginTop="16dp"
@@ -133,22 +132,23 @@
         android:hint="@string/hint_confirm_password"
         android:fontFamily="@font/regular"
         android:inputType="textPassword"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@id/tv_title_confirm_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <!-- Register Button -->
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btnRegister"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/title_register"
         android:fontFamily="@font/bold"
         android:textSize="14sp"
-        android:paddingVertical="10dp"
+        android:paddingVertical="12dp"
         android:layout_marginTop="20dp"
+        app:cornerRadius="10dp"
         app:layout_constraintTop_toBottomOf="@id/ed_register_confirm_password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
